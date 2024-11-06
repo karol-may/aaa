@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animowany box</title>
+<style>
+  /* Stylizacja ciała strony, aby box był widoczny na dole */
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+
+  /* Stylizacja i animacja boxa */
+  .moving-box {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: absolute;
+    bottom: 0;
+    animation: moveLeftRight 5s linear infinite;
+  }
+
+  /* Definicja animacji od lewej do prawej */
+  @keyframes moveLeftRight {
+    0% {
+      left: 0;
+      bottom: 0;
+    }
+    50% {
+      left: calc(100vw - 100px);
+      bottom: 0;
+    }
+    100% {
+      left: calc(100vw - 100px);
+      bottom: calc(100vh - 100px);
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="moving-box"></div>
+</body>
+</html>
